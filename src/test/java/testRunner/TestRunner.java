@@ -6,10 +6,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/HomePage.feature"},
+        features = "src/test/resources/features",
         glue = {"stepsDefinition"
-                , "appHooks"
-        },
+                , "appHooks"},
         monochrome = true,
         publish = true,
         plugin = {

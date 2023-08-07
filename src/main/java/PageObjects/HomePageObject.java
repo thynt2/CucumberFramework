@@ -12,8 +12,8 @@ public class HomePageObject extends BasePage {
     }
 
     public void clickToHayWorkLogoInHeader() {
-        waitForElementClickable(driver, HomePageUI.hayworkLogoHeader);
-        clickToElement(driver, HomePageUI.hayworkLogoHeader);
+        waitForElementClickable(driver, HomePageUI.hayWorkLogoHeader);
+        clickToElement(driver, HomePageUI.hayWorkLogoHeader);
     }
 
     public boolean isHomePageDisplayed() {
@@ -33,8 +33,8 @@ public class HomePageObject extends BasePage {
     }
 
     public boolean isHayWorkLogoInFooterDisplayed() {
-        waitForElementVisible(driver, HomePageUI.hayworkLogoFooter);
-        return isElementDisplayed(driver, HomePageUI.hayworkLogoFooter);
+        waitForElementVisible(driver, HomePageUI.hayWorkLogoFooter);
+        return isElementDisplayed(driver, HomePageUI.hayWorkLogoFooter);
     }
 
     public boolean isLinkedInIconDisplayed() {
@@ -50,6 +50,10 @@ public class HomePageObject extends BasePage {
     public boolean isTwitterIconDisplayed() {
         waitForElementVisible(driver, HomePageUI.twitterIcon);
         return isElementDisplayed(driver, HomePageUI.twitterIcon);
+    }
+    public void clickToContactUsButton(){
+        waitForElementClickable(driver,HomePageUI.contactUsBtn);
+        clickToElement(driver,HomePageUI.contactUsBtn);
     }
 }
 

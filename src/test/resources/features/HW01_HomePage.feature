@@ -1,3 +1,4 @@
+@smoke
 Feature: Home Page
 
   Scenario: User navigation to Home Page

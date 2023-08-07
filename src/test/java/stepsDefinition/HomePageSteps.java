@@ -62,6 +62,11 @@ public class HomePageSteps extends BasePage {
 
     @And("Twitter icon is displayed")
     public void twitterIconIsDisplayed() {
-        Assert.assertFalse(homePage.isTwitterIconDisplayed());
+        Assert.assertTrue(homePage.isTwitterIconDisplayed());
+    }
+
+    @When("Click on Contact Us button in header")
+    public void clickOnContactUsButtonInHeader() {
+        homePage.clickToContactUsButton();
     }
 }

@@ -7,10 +7,6 @@ public class ContactUsPageUI {
     public static String emailTxt = "//input[@name='mf-email']";
     public static String subjectTxt = "//input[@name='mf-subject']";
     public static String sendMessageBtn = "//span[normalize-space()='Send Message']";
-    public static String firstName_errMsg = "//input[@name='mf-first-name']//following-sibling::span[@class='mf-error-message']";
-    public static String lastName_errMsg = "//input[@name='mf-last-name']//following-sibling::span[@class='mf-error-message']";
-    public static String email_errMsg = "//input[@name='mf-email']//following-sibling::span[@class='mf-error-message']";
-    public static String subject_errMsg = "//input[@name='mf-subject']//following-sibling::span[@class='mf-error-message']";
+    public static String errMessageByName = "//input[@name='%s']//following-sibling::span[@class='mf-error-message']";
     public static String comment_errMsg = "//textarea[@name='mf-comment']//following-sibling::span[@class='mf-error-message']";
-    public static String reCaptcha_errMsg = "//input[@name='g-recaptcha-response']//following-sibling::span[@class='mf-error-message']";
 }
