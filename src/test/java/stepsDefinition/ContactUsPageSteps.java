@@ -2,19 +2,20 @@ package stepsDefinition;
 
 import PageObjects.ContactUsPageObject;
 import appHooks.Hooks;
-import com.google.common.base.Verify;
+import common.BaseTest;
 import common.PageGenerator;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
-public class ContactUsPageSteps {
+public class ContactUsPageSteps extends BaseTest {
 
     WebDriver driver;
     ContactUsPageObject contactUsPage;
+//    private final SoftAssertionHelper softAssertionHelper = new SoftAssertionHelper();
+
 
     public ContactUsPageSteps() {
         this.driver = Hooks.openAndQuitBrowser();
@@ -23,7 +24,7 @@ public class ContactUsPageSteps {
 
     @Then("Verify Contact Us page is displayed")
     public void verifyContactUsPageIsDisplayed() {
-        Assert.assertTrue(contactUsPage.isContactUsPageDisplayed());
+        verifyTrue(contactUsPage.isContactUsPageDisplayed());
     }
 
     @Given("User is navigate back to Home Page")
@@ -38,12 +39,13 @@ public class ContactUsPageSteps {
 
     @Then("Verify error message at mandatory fields")
     public void verifyErrorMessageAtMandatoryFields() {
-        Assert.assertEquals(contactUsPage.getErrorMessageByName("mf-first-name"), "This field is required.");
-        Assert.assertEquals(contactUsPage.getErrorMessageByName("mf-last-name"), "This field is required.");
-        Assert.assertEquals(contactUsPage.getErrorMessageByName("mf-email"), "This field is required.");
-        Assert.assertEquals(contactUsPage.getErrorMessageByName("mf-subject"), "This field is required.");
-        Assert.assertEquals(contactUsPage.getCommentsErrMsg(), "This field is required.");
-        Assert.assertEquals(contactUsPage.getErrorMessageByName("g-recaptcha-response"), "reCAPTCHA is required");
+        verifyEquals(contactUsPage.getErrorMessageByName("mf-first-name"), "This field is required.");
+        verifyEquals(contactUsPage.getErrorMessageByName("mf-last-name"), "This field is required.");
+        verifyEquals(contactUsPage.getErrorMessageByName("mf-email"), "This field is required.");
+        verifyEquals(contactUsPage.getErrorMessageByName("mf-subject"), "This field is required.");
+        verifyEquals(contactUsPage.getCommentsErrMsg(), "This field is required.");
+        verifyEquals(contactUsPage.getErrorMessageByName("g-recaptcha-response"), "This field is required.");
+        assertAll();
     }
 
     @Given("User enters valid data into FirstName and LastName")

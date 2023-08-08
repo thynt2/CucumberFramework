@@ -51,9 +51,10 @@ public class HomePageObject extends BasePage {
         waitForElementVisible(driver, HomePageUI.twitterIcon);
         return isElementDisplayed(driver, HomePageUI.twitterIcon);
     }
-    public void clickToContactUsButton(){
-        waitForElementClickable(driver,HomePageUI.contactUsBtn);
-        clickToElement(driver,HomePageUI.contactUsBtn);
+
+    public void clickToContactUsButton() {
+        waitForElementClickable(driver, HomePageUI.contactUsBtn);
+        clickToElement(driver, HomePageUI.contactUsBtn);
     }
 }
 

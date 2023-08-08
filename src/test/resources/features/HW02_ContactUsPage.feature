@@ -1,4 +1,3 @@
-@fast
 Feature: Contact Us Page
 
   Scenario: Open Contact Us Page
