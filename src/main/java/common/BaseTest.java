@@ -5,7 +5,7 @@ import org.assertj.core.api.SoftAssertions;
 
 public class BaseTest {
     private WebDriver driver;
-    private SoftAssertions softAssertions = new SoftAssertions();
+    private final SoftAssertions softAssertions = new SoftAssertions();
 
     public WebDriver getWebDriver() {
         return this.driver;
@@ -26,4 +26,6 @@ public class BaseTest {
     public void assertAll() {
         softAssertions.assertAll();
     }
+
+
 }

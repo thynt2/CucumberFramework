@@ -69,4 +69,8 @@ public class HomePageSteps extends BaseTest {
     public void clickOnContactUsButtonInHeader() {
         homePage.clickToContactUsButton();
     }
+
+//    @And("verify")
+//    public void verify() {
+//    }
 }

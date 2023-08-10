@@ -25,8 +25,28 @@ public class ContactUsPageObject extends BasePage {
         moveToElement(driver, ContactUsPageUI.errMessageByName, fieldName);
         waitForElementVisible(driver, ContactUsPageUI.errMessageByName, fieldName);
         return getElementText(driver, ContactUsPageUI.errMessageByName, fieldName);
-    }public String getCommentsErrMsg() {
+    }
+
+    public String getCommentsErrMsg() {
         waitForElementVisible(driver, ContactUsPageUI.comment_errMsg);
         return getElementText(driver, ContactUsPageUI.comment_errMsg);
+    }
+
+    public void fillContactUsForm(String firstName, String lastName, String emailId, String subject, String comment) {
+        waitForElementVisible(driver, ContactUsPageUI.firstNameTxt);
+        sendKeyToElement(driver, ContactUsPageUI.firstNameTxt, firstName);
+
+        waitForElementVisible(driver, ContactUsPageUI.lastNameTxt);
+        sendKeyToElement(driver, ContactUsPageUI.lastNameTxt, lastName);
+
+        waitForElementVisible(driver, ContactUsPageUI.emailTxt);
+        sendKeyToElement(driver, ContactUsPageUI.emailTxt, emailId);
+
+        waitForElementVisible(driver, ContactUsPageUI.subjectTxt);
+        sendKeyToElement(driver, ContactUsPageUI.subjectTxt, subject);
+
+        waitForElementVisible(driver, ContactUsPageUI.commentArea);
+        sendKeyToElement(driver, ContactUsPageUI.commentArea, comment);
+
     }
 }

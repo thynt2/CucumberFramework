@@ -8,13 +8,10 @@ Feature: Contact Us Page
     When Click Send Message button
     Then Verify error message at mandatory fields
 
-#  Scenario Outline: Verify error message at Email field
-#    Given User enters valid data into FirstName and LastName
-#    And User enters invalid <email> into Email field
-#    And User enters valid data into Subjects field
-#    Then Verify error message at Email field
-#
-#    Examples:
-#      | email         |
-#      | testing       |
-#      | testing@gmail |
+  Scenario Outline: User fill data into contact form
+    Given User fill the form from given sheetName "<SheetName>" and rowNumber <RowNumber>
+
+    Examples:
+      | SheetName | RowNumber |
+      | contactUs | 0         |
+      | contactUs | 1         |

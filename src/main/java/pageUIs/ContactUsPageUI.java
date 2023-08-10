@@ -6,6 +6,7 @@ public class ContactUsPageUI {
     public static String lastNameTxt = "//input[@name='mf-last-name']";
     public static String emailTxt = "//input[@name='mf-email']";
     public static String subjectTxt = "//input[@name='mf-subject']";
+    public static String commentArea = "//textarea[@name='mf-comment']";
     public static String sendMessageBtn = "//span[normalize-space()='Send Message']";
     public static String errMessageByName = "//input[@name='%s']//following-sibling::span[@class='mf-error-message']";
     public static String comment_errMsg = "//textarea[@name='mf-comment']//following-sibling::span[@class='mf-error-message']";
