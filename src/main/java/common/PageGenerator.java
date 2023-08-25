@@ -1,9 +1,9 @@
 package common;
 
-import PageObjects.AboutUsPageObject;
-import PageObjects.ContactUsPageObject;
-import PageObjects.HomePageObject;
-import PageObjects.ServicesPageObject;
+import pageObjects.AboutUsPageObject;
+import pageObjects.ContactUsPageObject;
+import pageObjects.HomePageObject;
+import pageObjects.ServicesPageObject;
 import org.openqa.selenium.WebDriver;
 
 public class PageGenerator {

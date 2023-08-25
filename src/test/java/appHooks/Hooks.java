@@ -1,6 +1,10 @@
 package appHooks;
 
-import Utils.PropertiesUtil;
+import browsers.BrowserFactory;
+import browsers.ChromeDriverManager;
+import browsers.EdgeDriverManager;
+import browsers.FirefoxDriverManager;
+import utils.PropertiesUtil;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.BeforeStep;
 import io.cucumber.java.Scenario;
@@ -29,28 +33,21 @@ public class Hooks {
     public static synchronized WebDriver openAndQuitBrowser() {
 
         String url = properties.getProperty("application.url");
-        String browser = properties.getProperty("browser.driver");
+        String browserName = properties.getProperty("browser.driver");
         if (driver == null) {
             try {
-                if (browser == null) {
-                    browser = properties.getProperty("browser.driver");
+                if (browserName == null) {
+                    browserName = properties.getProperty("browser.driver");
                 }
-                switch (browser) {
+                switch (browserName) {
                     case "firefox" -> {
-                        WebDriverManager.firefoxdriver().setup();
-                        System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
-                        System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
-                        driver = new FirefoxDriver();
+                        driver = new FirefoxDriverManager().getBrowserDriver();
                     }
-                    case "ie" -> {
-                        WebDriverManager.iedriver().arch32().setup();
-                        driver = new InternetExplorerDriver();
+                    case "edge" -> {
+                        driver = new EdgeDriverManager().getBrowserDriver();
                     }
                     default -> {
-                        WebDriverManager.chromedriver().setup();
-                        ChromeOptions options = new ChromeOptions();
-                        options.addArguments("--remote-allow-origins=*");
-                        driver = new ChromeDriver(options);
+                        driver = new ChromeDriverManager().getBrowserDriver();
                     }
                 }
             } finally {

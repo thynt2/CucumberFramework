@@ -1,7 +1,7 @@
 package stepsDefinition;
 
 import appHooks.Hooks;
-import PageObjects.HomePageObject;
+import pageObjects.HomePageObject;
 import common.BaseTest;
 import common.PageGenerator;
 import io.cucumber.java.en.And;

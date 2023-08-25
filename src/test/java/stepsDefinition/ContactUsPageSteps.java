@@ -1,11 +1,10 @@
 package stepsDefinition;
 
-import PageObjects.ContactUsPageObject;
-import Utils.ExcelReader;
+import pageObjects.ContactUsPageObject;
+import utils.ExcelReader;
 import appHooks.Hooks;
 import common.BaseTest;
 import common.PageGenerator;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
