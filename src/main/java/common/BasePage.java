@@ -29,12 +29,10 @@ public class BasePage {
     }
 
     public void clickToElement(WebDriver driver, String element) {
-        highlightElement(driver, element);
         getWebElement(driver, element).click();
     }
 
     public void sendKeyToElement(WebDriver driver, String element, String value) {
-        highlightElement(driver, element);
         WebElement ele = getWebElement(driver, element);
         ele.clear();
         ele.sendKeys(value);
@@ -59,17 +57,14 @@ public class BasePage {
 
 
     public String getElementText(WebDriver driver, String element) {
-        highlightElement(driver, getDynamicXpath(element, element));
         return getWebElement(driver, element).getText().trim();
     }
 
     public String getElementText(WebDriver driver, String element, String... dynamicValue) {
-        highlightElement(driver, getDynamicXpath(element, dynamicValue));
         return getWebElement(driver, getDynamicXpath(element, dynamicValue)).getText().trim();
     }
 
     public boolean isElementDisplayed(WebDriver driver, String element) {
-        highlightElement(driver, element);
         try {
             return getWebElement(driver, element).isDisplayed();
         } catch (NoSuchElementException e) {

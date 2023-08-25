@@ -6,11 +6,6 @@ import org.assertj.core.api.SoftAssertions;
 public class BaseTest {
     private WebDriver driver;
     private final SoftAssertions softAssertions = new SoftAssertions();
-
-    public WebDriver getWebDriver() {
-        return this.driver;
-    }
-
     public void verifyEquals(String actual, String expected) {
         softAssertions.assertThat(actual).isEqualTo(expected);
     }
