@@ -73,7 +73,7 @@ public class BasePage {
     }
 
     public void waitForElementClickable(WebDriver driver, String element) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(element)));
     }
 

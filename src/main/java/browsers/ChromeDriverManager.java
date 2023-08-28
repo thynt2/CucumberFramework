@@ -17,7 +17,7 @@ public class ChromeDriverManager implements BrowserFactory {
         options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
         options.addArguments("--disable-notifications");
         options.addArguments("--disable-geolocation");
-
+        options.addArguments("--remote-allow-origins=*");
         return new ChromeDriver(options);
     }
 }

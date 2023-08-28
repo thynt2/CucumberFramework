@@ -27,9 +27,8 @@ public class HomePageObject extends BasePage {
     }
 
     public void clickToGetStartedNowButton() {
-        moveToElement(driver, HomePageUI.getStartedNowBtn);
-        waitForElementClickable(driver, HomePageUI.getStartedNowBtn);
-        clickToElement(driver, HomePageUI.getStartedNowBtn);
+        scrollToElement(driver, HomePageUI.getStartedNowBtn);
+        clickToElementByJS(driver, HomePageUI.getStartedNowBtn);
     }
 
     public boolean isHayWorkLogoInFooterDisplayed() {
